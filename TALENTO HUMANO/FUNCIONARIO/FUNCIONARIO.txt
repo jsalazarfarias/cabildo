@@ -1,0 +1,22 @@
+******09-08-2017 SUSY
+
+----EN EL SCRIPT SE LE AUMENTO EL FILTRO PARA QUE LOS QUE ESTEN EN ANULADOS NO APAREZCAN
+
+****** 22-02-2018 VLACHO
+---- EN EL SCRIP SE LE AGREGO EN EL WHERE EL CODIGO 8611 PARA QUE NO SE DUPLIQUE UN REGISTRO
+
+****** 28-06-2018 VLACHO
+---- SE COMPILO NUEVAMENTE PARA QUE PUEDA MOSTAR INFORMACION EL REPORTE.
+
+*/****** 09-03-2020   susy
+--- cambio de logo, y se agrega para que imprima el usuario que genero el reporte.
+
+24-03-2020		***Actualizacon angel
+
+	-se modifico el numero de registros del marco de repeticion del reporte
+	-se modifico la tipografia del reporte
+
+08-07-2022		***Actualizacion angel
+	-se crea columna fecha creacion con el fin de optimizar el filtrado de los datos
+	-se agrega el alias al atributo nom01codi ya que se incorpora el atributo "nom01codi" a la tabla nomca02
+	 y estaba generando un error de ambiguedad a la hora de extraer el reporte

@@ -1,0 +1,20 @@
+----susy 15-11-2017
+
+se le desahabilito los pasos 2-3-4, el paso 2 se lo realizo dentro del paso 1 haciendo una unidad de programa llamada exonera_avaluo.
+
+Los pasos 3 - 4 son realizados internamente desde la funcion de los predios urbanos.
+
+-----
+
+1.- SE INCLUYO UN CATALOGO EL CUAL CONTIENE EL AÑO Y EL SBU CORRESPONDIENTE, AL CAMPO EMIPROANIO
+2.- SE INHABILITO LA INSERCION Y ACTUALIZACION A LOS CAMPOS EMIPROANIO, EMISMV 
+3.- SE DESAHIBILITO EL BOTON PREPARAR PARA QUE ESTE SE REACTIVE A LA HORA DE ELEGIR EL CATALAGO.
+
+
+	Abraham - 01/10/2019
+
+Actualización de fondo, fuentes tipográficas, cromática e íconos.
+
+27-DIC-2021		*** ALEXA
+
+- SE ELIMINA BLOQUE PARA EMISIÒN A LOS 100 ERRORES

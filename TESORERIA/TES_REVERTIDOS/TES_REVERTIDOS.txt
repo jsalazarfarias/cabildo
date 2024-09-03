@@ -1,0 +1,4 @@
+14-02-2020		**actualizacion angel
+	-se crea el reporte de titulos revertidos 
+27-02-2020		**actualizacion angel
+	-se añade columna de motivo del reverso al reporte

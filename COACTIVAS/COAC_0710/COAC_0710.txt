@@ -1,0 +1,18 @@
+27-06-2019	****ANGEL
+	
+	-SE CREA EL REPORTE
+
+--21-02-2020   ***susy
+
+ se actualiza para que salga el año actual
+
+06-05-2021	***actualizacion angel
+	-Se generaliza la ciudad en la cual se emite el informe
+	-Se automatiza el nombre del contribuyente
+
+2-06-2022    ** **susy
+
+	- se cmbia la accion de personal **memorando -gadmce-df-n0288
+
+05-06-2023	***ACTUALIZACION ANGEL
+	-SE REALIZAN CORRECCIONES AL TEXTO DEL REPORTE Y SE CUADRAN LOS MEMBRETES DE LAS HOJAS

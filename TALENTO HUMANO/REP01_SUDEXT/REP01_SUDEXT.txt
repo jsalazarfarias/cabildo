@@ -1,0 +1,8 @@
+-******  09-01-2020  susy
+
+-- nueva forma para la extraciion de reporte exportados a excel de las personas que estan activas,
+de acuerdo a la seleccion le genera el reporte.
+
+09-01-2020      ****ABRAHAM
+
+	Actualización de imagen institucional (logos, íconos, colores, tipografía)

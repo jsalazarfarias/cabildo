@@ -1,0 +1,15 @@
+16-10-2020		***actualizacion angel
+	-se crea el formulario
+22-10-2020		***actualizacion susy
+	-se recompila el formulario
+09-11-2020		***actualizacion angel
+	-se crea nuevo procedimiento a la base de datos cp_atrib_mz
+	 el cual rescata los datos de calles y valores de ordenanza y a su vez los copia en las 	 manzanas nuevas.
+
+	-se agregan controles de bloqueo y desbloqueo de atributos dependiendo del estado del proceso
+
+10-11-2020		***actualizacion angel
+
+	-se recompila el formulario
+
+

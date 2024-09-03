@@ -1,0 +1,13 @@
+
+--------------------------------------------------------
+19-03-2018      MODIFICACION VLACHORN
+
+se le incremento un boton que pueda sacar un reporte individual por periodo y regimen 
+teniendo como parametro numero de cedula y codigo periodo.
+
+03-10-2019	****ANGEL
+
+	-SE CAMBIO EL LOGO AL REPORTE
+
+16-11-2021	***ACTUALIZACION ANGEL
+	-SE APLICA FILTRO, DE TAL MANERA QUE EXTRAIGA SOLO ROLES EN ESTADO GENERADO

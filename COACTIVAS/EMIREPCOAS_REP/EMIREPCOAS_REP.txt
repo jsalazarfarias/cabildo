@@ -1,0 +1,4 @@
+--------------------------------------------------------
+29-03-2018      MODIFICACION VLACHORN
+
+se creo un nuevo reporte para sacar la deuda de los que aun no han sido coactivados 

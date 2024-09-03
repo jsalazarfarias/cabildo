@@ -1,0 +1,128 @@
+30-05-2014  version enviada por WLADIMIR SANDOVAL
+            CONTIENE CORRECCION DE ERRORES REPORTADOS POR EL GADMCE EN ABRIL 2014
+
+---------------------------------------------------------
+21-04-2015         MODIFICACION    VLACHORN
+ANTUALIZACION DEL FORMULARIO FPM01
+SE LE REALIZO UN WHERE NOT AL BLOQUE DE DATOS FPM01 PARA QUE NO MUESTRE EL CODIGO 408 QUE CORRESPONDE A VENTA DE TERRENO.
+
+---------------------------------------------------------
+07-05-2015         MODIFICACION    VLACHORN
+
+SE AGREGO EL CAMPO PARA QUE SE VEA EL AÑO DEL TITULO
+
+----------------------------------------------
+01/06/2016         MODIFICACION SUSY
+
+SE LE PROGRAMO EN EL BOTON DE RECAUDAR TODO, PARA QUE SEPUEDE CSRGAR LOS INTERES EN LA EMI02 YA QUE CUANDO ERA CON ABONO NO LO GUARDABA EN ESA TABLA.
+------------------     
+
+
+20/SEPT/2016		ALEXA 
+
+SE CORRIGE LA CONDICION DE BUSQUEDA PARA LA VISTA v_estado_de_cuenta
+EN: NOT(CODIGO_IMPUESTO = 408) ANTES: EMI03CODI=
+
+31/OCT/2016		ALEXA
+
+SE CAMBIA LA LLAMADA A LA FUNCION QUE REALIZA LA IMPRESION DEL TITULO TERMINAL.
+SE CREA FUNCION UNICA PARA LA IMPRESION DE TITULOS COBRADOS CON ABONOS
+
+FUNCTION F_REP_CAJA_ABO(COD IN VARCHAR2) RETURN VARCHAR2
+
+01/SEPT/2017		ALEXA
+
+SE ADICIONAN CAMBIOS A LA FORMA, AL PAQUETE UTI, Y A LA FUNCIÓN F_ABONOINTERES
+PARA CORREGIR EL VALOR QUE SE MUESTRA COMO TASA DE INTERES APLICADA
+
+04/SEPT/2017		ALEXA
+
+SE ACTUALIZA LA ESTRUCTURA DE LA TABLA FPM01, DEBIDO A QUE LA TASA DE INTERES GENERADA ES MAYOR A DOS CIFRAS ENTERAS.
+
+
+17-07-2019		ANGEL
+	-SE AGREGO UN BOTON PARA QUE PUEDAN CERRAR LOS ABONOS A DESTIEMPO.
+
+21-11-2019		***actualizacion angel
+	-SE INCREMENTA LA MASCARA DE FORMATO A LOS CAMPOS QUE CONTIENEN VALORES NUMERICOS 
+
+
+25/NOV/2019		*****ALEXA
+
+-- SE INCREMENTA FILTRO DE CODIGO DE TRIBUTO - EXCEPTUA VENTA DE TERRENOS PARA BUSQUEDAS POR CIU *****ALEXA 25NOV19
+
+28/AGO/2020		*****ALEXA
+
+SE AMPLIA A 2500 VARIABLE V_OBSERVACION Y A 1000 OBSERVACION --> PARA CUANDO CIERRA TITULO CON CAPITAL PENDIENTE=0
+
+SE DEPURA LÍNEA:
+update fpm01 set fpm01reso = v_observacion||'; '||:CG$CTRL.obs;
+
+AGREGANDO CONDICION PARA ACTUALIZAR EN UN SOLO REGISTRO
+update fpm01 set fpm01reso = v_observacion||'; '||:CG$CTRL.obs where fpm01codi = :fpm01.fpm01codi;
+
+
+CODIGO ORIGINAL:
+if not :CG$CTRL.obs is not null then 
+		pr_alerta_error('EL CAMPO OBSERVACION ES OBLIGATORIO');
+	  return;
+	else
+		sigue := fn_alerta_proseguir('DESEA PROCEDER CON EL CIERRE DEL ABONO?');
+			if sigue = true then
+				update emi01 set emi01esta = 'J' where emi01codi = :fpm01.emi01codi;
+				update fpm01 set fpm01reso = v_observacion||'; '||:CG$CTRL.obs;
+				update fpm01 set fpm01esta = 'RE' where fpm01codi = :fpm01.fpm01codi;
+				DELETE FPD02 WHERE FPD01CODI = 
+				(SELECT FPD01CODI 
+					FROM FPD01 
+					WHERE FPD01ESTADO = 'IG' 
+					AND EMI01CODI = :FPM01.FPM01CODI);
+				DELETE FPD01  WHERE FPD01ESTADO = 'IG' AND EMI01CODI = :FPM01.EMI01CODI;
+				commit;
+				pr_alerta_exito('Transacion completa...!');
+				:parameter.p_fpm01codi := :fpm01.fpm01codi;
+				go_block('fpm01');
+				execute_query(no_validate);
+			else
+				return;
+			end if;
+	end if;
+
+CODIGO CORREGIDO
+
+if not :CG$CTRL.obs is not null then 
+		pr_alerta_error('EL CAMPO OBSERVACION ES OBLIGATORIO');
+	  return;
+	else
+		sigue := fn_alerta_proseguir('DESEA PROCEDER CON EL CIERRE DEL ABONO?');
+			if sigue = true then
+				update emi01 set emi01esta = 'J' where emi01codi = :fpm01.emi01codi;
+				update fpm01 set fpm01reso = v_observacion||'; '||:CG$CTRL.obs where fpm01codi = :fpm01.fpm01codi;
+				update fpm01 set fpm01esta = 'RE' where fpm01codi = :fpm01.fpm01codi;
+				DELETE FPD02 WHERE FPD01CODI = 
+				(SELECT FPD01CODI 
+					FROM FPD01 
+					WHERE FPD01ESTADO = 'IG' 
+					AND FPM01CODI = :FPM01.FPM01CODI);
+				DELETE FPD01  WHERE FPD01ESTADO = 'IG' AND FPM01CODI = :FPM01.FPM01CODI;
+				commit;
+				pr_alerta_exito('Transacion completa...!');
+				:parameter.p_fpm01codi := :fpm01.fpm01codi;
+				go_block('fpm01');
+				execute_query(no_validate);
+			else
+				return;
+			end if;
+	end if;
+
+
+
+
+15-09-2021			******actualizacion angel
+
+	-se migra todo el proceso de cierre de abono a destiempo a la base de datos.
+
+
+16-09-2021			***** ALEXA
+
+- Se recompila forma

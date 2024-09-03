@@ -1,0 +1,23 @@
+10-04-2018
+
+-se añadio el avaluo del vehiculo al detalle del titulo a emitir.
+
+26-04-2018
+
+-se agrego un Lov el cual llama los datos del vehiculo y realiza y llena las cajas de texto correspondientes a la emision.
+
+29-05-2018
+
+-se configuraron los campos mes y año para que segun el año para el cual se valla a emitir se transcriba automaticamente
+
+28FEB2018		ALEXA
+
+REUNION DE TRABAJO CON DIRECCION FINANCIERA, DIRECCION DE TRANSITO, JEFATURA DE RENTAS
+
+SE HABILITA EDICION PARA INGRESO DE AVALUO Y AÑO DE EMISION. 
+PERMITE EMISION CON REGISTRO MANUAL DE DATOS
+
+	Abraham - 01/10/2019
+
+Actualización de fondo, fuentes tipográficas, cromática e íconos.
+

@@ -1,0 +1,5 @@
+
+--------------------------------------------------------
+23-02-2016      MODIFICACION VLACHORN
+
+modificacion del campo no cargaba el reporte solicitado desde el formulario.

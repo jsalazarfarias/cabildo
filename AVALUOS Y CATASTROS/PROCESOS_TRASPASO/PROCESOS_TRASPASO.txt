@@ -1,0 +1,16 @@
+24-JUL-2019			*****ALEXA
+
+SE DESACTIVA LA OPCION DE <<DESBLOQUEO>>
+
+27-AGO-2019		**ABRAHAM
+
+Actualización de fondos, tipos de letra
+
+24-FEB-2021			*****ALEXA
+
+- Se incrementa un atributo en la tabla EMILOG desde la llamada a la función Fcambio_Traspaso.
+- Se inahbilita la opción de ACTUALIZACION GLOBAL
+- Se agrega control de mensajes de error, cuando el proceso no encuentra el pago de tributos por ALCABALDAS o UTILIDADES asociadas al predio.
+
+27-01-2021		***ACTUALIZACION ANGEL
+	-SE RECOMPILA EL FORMULARIO

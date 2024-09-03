@@ -1,0 +1,4 @@
+22-10-2020	***actualizacion angel
+	-se crea el formulario
+25-11-2020	***actualizacion angel
+	-SE ESTABLECE POR DEFECTO EL MOTIVO CAMBIO

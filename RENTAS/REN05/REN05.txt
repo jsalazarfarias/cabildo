@@ -1,0 +1,47 @@
+05-JUL-2016			ALEXA
+
+SE INCREMENTA ATRIBUTO REN05PERDIDA, PARA AQUELLAS PERSONAS QUE DECLAREN CON PERDIDA Y EN BASE A ELLO APLICAR EL ARTICULO 549 DEL COOTAD: SE REDUCE EL IMPUESTO AL 50%.
+
+22-MARZ-2016			ALEXA
+
+SE CORRIGE ATRIBUTO A GUARDAR COMO BASE IMPONIBLE 
+	REN30BIMP := REN55VALO03 PARA EL CASO DEL TRIBUTO 130
+
+ENERO-2018
+
+AJUSTES PARA REALIZAR EMISION DE PERMISOS DE FUNCIONAMIENTO
+SE BLOQUEA EL ACCESO A CATALOGOS ALIMENTADOS DESDE HIGIENE
+
+14-02-2018 ANGEL
+
+-se agrego un parametro "P_REN05CODI" el cual se llenara una vez se realize una actualizacion
+
+-se agrego un trigger "WHEN-WINDOW-ACTIVATE" el cual ejecutara una consulta enlazando el campo ":REN05.REN05CODI" con el parametro "P_REN05CODI" una vez que la ventana principal vuelva a activarse
+
+22-02-2018	ALEXA
+
+se habilita la edición del catálogo TIPOS DE ESTABLECIMIENTO para que RENTAS tenga la opción de asignar ARTESANOS...
+
+28-02-2018	ALEXA
+
+Se habilita opciones de ingreso de nuevo registro, accedido únicamente por Jefa o jefe de rentas.
+
+08-03-2018	ALEXA
+
+Se configura grabar valor de atributo REN55VALO01 (TOTAL ACTIVOS) en parámetro REN31.REN31BIMP para guardar base imponible tomada al momento de la emisión tributaria 
+
+14-03-2018	ALEXA
+
+Se envía valor de REN55VALO01 (TOTAL ACTIVOS) directamente a la tabla, para evitar el control de actualizacion en la forma.
+
+30-julio-2021	ALEXA
+
+Se agrega atributo para NRO LOCALES/ESTABLECIMIENTOS para el cálculo de Permisos de funcionamiento. 
+En caso de ferias, se pagará por cada local instalado en base a su actividad comercial, ver Ordenanza
+
+17-01-2022	***ACTUALIZACION ANGEL
+	-SE DINAMIZA EL CASILLERO DEL AÑO DE TAL MANERA QUE EL AÑO DE EMISION NO PUEDA SER MAYOR AL AÑO EN CURSO NI MENOR A 1997
+
+03-02-2022	***ACTUALIZACION ANGEL
+	-SE BLOQUEA EL BOTON DE EMISION DE TAL MANERA QUE SI EL LOCAL SE ENCUENTRA EN ESTADO "CE" NO PERMITA UTILIZAR EL BOTON
+	 SALVO EN CASO DE QUE EL TITULO SE ENCUENTRE EN UN ESTADO DIFERENTE A PENDIENTE

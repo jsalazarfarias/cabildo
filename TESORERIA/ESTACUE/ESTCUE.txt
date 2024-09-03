@@ -1,0 +1,9 @@
+21-03-2018
+
+-Se agrego el campo recargo a la sumatoria del valor del abono ya que el mismo no se encontraba e impedia la extraccion de titulos con abono cuyos recargos fueran mayor a 0
+
+29-09-2021	***ACTUALIZACION ANGEL
+
+	-Se ubican los campos de sumatoria en los atributos correspondientes.
+
+	

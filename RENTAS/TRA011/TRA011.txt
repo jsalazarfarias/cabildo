@@ -1,0 +1,18 @@
+30 MAYO 2017			--VLACHORN
+
+1. CAMBIA MASCARA DE FORMATO Y COMPILACION
+
+
+	Abraham - 01/10/2019
+
+Actualización de fondo, fuentes tipográficas, cromática e íconos.
+
+07-05-2024		***ACTUALIZACION ANGEL
+	
+	-SE AGREGA BLOQUE DE DATOS PARA INCORPORAR VARIOS VENDEDORES, COMPRADORES Y REPRESENTANTES AL PROCESO DE COMPRAVENTA
+
+20-08-2024		***ACTUALIZACION ANGEL
+	-SE VERIFICA LINA DE CODIGO LA CUAL MANTENIA EL ROTULO DE DERECHOS Y ACCIONES INACTIVA, SE VUELVE A HABILITAR
+20-08-2024    ****ACTUALIZACION ANGEL
+
+	---- se realizan algunas validaciones y bloqueos de atributos para no modificaciones., todo en base a petición verbal de la Ing. Aracely Véliz

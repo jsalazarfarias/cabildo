@@ -1,0 +1,11 @@
+08-SEP-2020		*****ALEXA
+
+- CAMBIO EN LA FORMA DE LECTURA DE LOS CODIGOS A PRESENTAR EN EL FILTRO DE BUSQUEDA (REGISTRO TRIBUTO)
+
+select emi03codi codigo, emi04desd descripcion, emi04codi cod
+from emi04
+where emi03codi in (SELECT REN21SUBF
+                    FROM REN21
+                    WHERE REN20CODI = 213)
+and not emi04desd = 'SERVICIOS ADMINISTRATIVOS'
+

@@ -1,0 +1,12 @@
+05-02-2019
+
+	-se agrego la firma y el nombre del director a la tabla par00 para que en 	el momento en que este cambie puedan subir la firma y el nombre del mismo
+
+12-06-2019	**********ACTUALIZACION ANGEL
+
+	-SE RECOMPILA EL REPORTE
+
+--02/12/2019  SUSY
+
+*** SE LE CAMBIA LA VARIABLE QUE ESTABA LEYENDO EL AEREA DEL TERRENO TERRENO1 - TERRENO, PARA Q PUEDA CARGAR EL VALOR CORRECTO...
+

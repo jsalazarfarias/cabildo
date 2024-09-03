@@ -1,0 +1,4 @@
+01-02-2022		***actualizacion angel
+	-se elimina el boton actualizar patrimonio
+25-08-2022		***actualizacion angel
+	-se cambia el Rotulo de pantalla de consulta

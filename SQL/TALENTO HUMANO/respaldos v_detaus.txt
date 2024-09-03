@@ -1,0 +1,107 @@
+DROP VIEW SISESMER.V_DETAUS;
+
+/* Formatted on 2022/05/25 08:58 (Formatter Plus v4.8.8) */
+CREATE OR REPLACE FORCE VIEW sisesmer.v_detaus (nomca02per,
+                                                nom01codi,
+                                                dias_consumidos,
+                                                dias_habiles_consumidos,
+                                                dias_nhabiles_consumidos,
+                                                horas_consumidas,
+                                                minutos_consumidos
+                                               )
+AS
+   SELECT   nomca02per, nom01codi,
+              SUM (nomca02nd)
+            + TRUNC (SUM (nomca02nh) / 8)
+            + TRUNC ((SUM (nomca02nm) / 60) / 8) dias_consumidos,
+            NVL
+               (CASE
+                   WHEN MOD (  SUM (nomca02nd)
+                             + NVL (SUM (nomca02ndfs), 0)
+                             + TRUNC (SUM (nomca02nh) / 8)
+                             + TRUNC ((SUM (nomca02nm) / 60) / 8),
+                             7
+                            ) >= 5
+                      THEN   (  (TRUNC (  (  SUM (nomca02nd)
+                                           + NVL (SUM (nomca02ndfs), 0)
+                                           + TRUNC (SUM (nomca02nh) / 8)
+                                           + TRUNC ((SUM (nomca02nm) / 60) / 8)
+                                          )
+                                        / 7
+                                       )
+                                )
+                              * 5
+                             )
+                           + 5
+                   ELSE     (TRUNC (  (  SUM (nomca02nd)
+                                       + NVL (SUM (nomca02ndfs), 0)
+                                       + TRUNC (SUM (nomca02nh) / 8)
+                                       + TRUNC ((SUM (nomca02nm) / 60) / 8)
+                                      )
+                                    / 7
+                                   )
+                            )
+                          * 5
+                        + MOD (  SUM (nomca02nd)
+                               + NVL (SUM (nomca02ndfs), 0)
+                               + TRUNC (SUM (nomca02nh) / 8)
+                               + TRUNC ((SUM (nomca02nm) / 60) / 8),
+                               7
+                              )
+                END,
+                0
+               ) dias_habiles_consumidos,
+            NVL
+               (CASE
+                   WHEN MOD (  SUM (nomca02nd)
+                             + NVL (SUM (nomca02ndfs), 0)
+                             + TRUNC (SUM (nomca02nh) / 8)
+                             + TRUNC ((SUM (nomca02nm) / 60) / 8),
+                             7
+                            ) >= 5
+                      THEN     (TRUNC (  (  SUM (nomca02nd)
+                                          + NVL (SUM (nomca02ndfs), 0)
+                                          + TRUNC (SUM (nomca02nh) / 8)
+                                          + TRUNC ((SUM (nomca02nm) / 60) / 8)
+                                         )
+                                       / 7
+                                      )
+                               )
+                             * 2
+                           + MOD (MOD (  SUM (nomca02nd)
+                                       + NVL (SUM (nomca02ndfs), 0)
+                                       + TRUNC (SUM (nomca02nh) / 8)
+                                       + TRUNC ((SUM (nomca02nm) / 60) / 8),
+                                       7
+                                      ),
+                                  5
+                                 )
+                   ELSE   (TRUNC (  (  SUM (nomca02nd)
+                                     + NVL (SUM (nomca02ndfs), 0)
+                                     + TRUNC (SUM (nomca02nh) / 8)
+                                     + TRUNC ((SUM (nomca02nm) / 60) / 8)
+                                    )
+                                  / 7
+                                 )
+                          )
+                        * 2
+                END,
+                0
+               ) dias_nhabiles_consumidos,
+            MOD (SUM (nomca02nh) + TRUNC (SUM (nomca02nm) / 60),
+                 8
+                ) horas_consumidas,
+            MOD (SUM (nomca02nm), 60) minutos_consumidos
+       FROM nomca02 a
+      WHERE nomca02per IN (SELECT MAX (b.nomca02per)
+                             FROM nomca02 b
+                            WHERE b.nom01codi = a.nom01codi)
+        AND nomca02esta = 'AP'
+        AND nomca02per > 2018
+   GROUP BY nomca02per, nom01codi;
+
+
+DROP PUBLIC SYNONYM V_DETAUS;
+
+CREATE PUBLIC SYNONYM V_DETAUS FOR SISESMER.V_DETAUS;
+

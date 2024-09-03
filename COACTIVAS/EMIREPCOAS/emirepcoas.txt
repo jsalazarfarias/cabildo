@@ -1,0 +1,33 @@
+--------------------------------------------------------
+29-03-2018      MODIFICACION VLACHORN
+
+se incremento un nuevo opcion para hacer la impresion de contribuyentes que tengan deuda y no esten coactivados
+
+
+--------------------------------------------------------
+21-06-2018      MODIFICACION VLACHORN
+
+se incremento un nuevo opcion para hacer la impresion de totales de Patente, Permiso y Activos totales  coactivados que se encuentran en estado pendiente y recaudado
+
+--------------------------------------------------------
+24-08-2018      MODIFICACION VLACHORN
+
+se incremento un nuevo opcion para hacer la impresion de totales de todos los tributos como pendientes de pago, recaudados, notificados y coactivados.
+----------------------------------------------------------
+05-11-2018      MODIFICACION VLACHORN
+
+SE IMPLEMENTO LA OPCION DE IMPRIMIR POR CONTRIBUYENTE
+
+15-06-2023		***ACTUALIZACION ANGEL
+	-SE REESTILIZA TODO EL FORMULARIO, FILTROS TEMPORALMENTE INHABILITADOS
+10-07-2023		***ACTUALIZACION ANGEL
+	-SE HABILITAN REPORTES FALTANTES Y SE HABILITA LA OPCION PARA EXPORTAR LOS DATOS A EXCEL
+11-07-2023		***ACTUALIZACION ANGEL	
+	-SE RECOMPILA EL FORMULARIO
+12-07-2023		***ACTUALIZACION ANGEL
+	-SE APLICA ROTULO DINAMICO DEBAJO DEL RANGO DE FECHAS
+	
+27-07-2023		***ACTUALIZACION ANGEL
+	-SE CORRIGE FILTRO DE CARTERA VENCIDA, LA CUAL ESTABA EXCLUYENDO LOS TITULOS QUE TENIAN PLAN COACTIVO
+02-08-2023		***ACTUALIZACION ANGEL
+	-SE HABILITA REPORTE DE RESUMEN DE CARTERA

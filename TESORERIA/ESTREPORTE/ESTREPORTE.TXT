@@ -1,0 +1,10 @@
+30-05-2018
+
+-SE INCREMENTO EN EL EVENTO POST QUERY PARA QUE HAGA LA LLAMADA AL RECARGO EN LO QUE REFIERE A IMPUESTO AL RODAJE
+
+22-02-2021		***actualizacion angel
+
+	-se agrego un campo de texto para que avise el destimpo de la actualizacion del 	abono
+
+14-06-2022		***actualizacion angel
+	-se crea objeto para carga de id de nota de crédito

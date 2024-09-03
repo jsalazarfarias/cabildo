@@ -1,0 +1,17 @@
+--------------------------------------------------------
+01-10-2018      MODIFICACION VLACHORN
+
+se modifico el proceso de anular los coactivados
+
+08-02-2019
+
+SE AGREGO LA OPCION DE IMPRIMIR EL TITULO DE CREDITO INDIVIDUAL SIN FECHA DE PAGO Y SIN NRO DE PAGO
+
+
+--------------------------------------------------------
+24-10-2023    ANGEL GRACIA
+
+SE INCLUYE TITULOS EN ABONO PARA BUSQUEDA
+
+08-02-2024	****ACTUALIZACION ANGEL
+	-SE RECOMPILA EL FORMULARIO
